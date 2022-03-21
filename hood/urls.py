@@ -22,5 +22,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('' ,include('hoodwatch.urls')),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('logout/', views.logout, {"next_page":'/'}),
+    
+    path(
+        route='logout/',
+        view=views.LogoutView.as_view(),
+        name='logout'
+    ),
+
+    path(
+        route='login/',
+        view=views.LoginView.as_view(),
+        name='login'
+    )
 ]
