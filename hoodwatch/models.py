@@ -54,7 +54,7 @@ class Neighbourhood(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length = 65)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    hood = models.ForeignKey(Neighbourhood, blank=True)
+    hood = models.ForeignKey(Neighbourhood, blank=True,on_delete=models.CASCADE)
     description = models.TextField(max_length=300)
     
     
@@ -65,8 +65,8 @@ class Post(models.Model):
 
 class Business(models.Model):
     name = models.CharField(max_length = 65)
-    user = models.ForeignKey(User)
-    hood = models.ForeignKey(Neighbourhood,blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    hood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
     email = models.CharField(max_length=100)
 
 
@@ -81,8 +81,8 @@ class Business(models.Model):
         self.delete()
 
 class Join(models.Model):
-    user_id = models.OneToOneField(User)
-    hood_id = models.ForeignKey(Neighbourhood)
+    user_id = models.OneToOneField(User, on_delete=models.CASCADE)
+    hood_id = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.user_id
