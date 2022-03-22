@@ -11,7 +11,7 @@ urlpatterns=[
     path('profile/', views.profile, name='profile'),
     path('createHood/', views.createHood, name='createHood'),
     path('update/profile', views.updateprofile, name='updateprofile'),
-    path('join/', views.join, name='joinHood'),
+    path('index/', views.join, name='index'),
    path('search/', views.search, name='search'),
 ]
 if settings.DEBUG:

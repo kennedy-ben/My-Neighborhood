@@ -9,8 +9,7 @@
     <div class="container-fluid" style="margin-top:48px;background-image:url(/static/images/Neighbourhood-Plan-1200-x-400.png);height:35vh;">
         <div style="float: right; color: rgb(240, 5, 103);font-family: 'Charmonman', cursive;">
             <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}">
-                <input type="text" class="form-control my-2 my-sm-0 search-input" name="search" placeholder="Search.."
-                    id="search">
+                <input type="text" class="form-control my-2 my-sm-0 search-input" name="search" placeholder="Search.."id="search">
             </form>
         </div>
         <div style="font-family: 'Charmonman', cursive;font-size:60px; padding-top:40px;color: rgb(24, 185, 37);">
@@ -63,7 +62,7 @@
                             <div class="card-body" style="width: auto">
                                 <img src="{{hood.image}}" alt="">
                                 <p> <i class="fa fa-map-marker" aria-hidden="true"> {{ hood.location }}</i></p>
-                                <a href=" {% url 'joinHood' hood.id % }" class="btn btn-sm btn-success">Join</a>
+                                <a href=" {% url 'index' %}" class="btn btn-sm btn-success">Join</a>
                             </div>
                         </div>
                     </div>

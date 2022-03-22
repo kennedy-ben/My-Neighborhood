@@ -115,7 +115,7 @@ def create_business(request):
             new_biz.user = current_user
             # new_biz.hood =this_hood
             new_biz.save()
-            return redirect(home)
+            return redirect(index)
     else:
         form = BusinessForm()
     return render(request,"businessform.html",locals())
@@ -133,5 +133,5 @@ def join(request, hoodId):
 
         Join(user_id=request.user, hood_id=neighbourhood).save()
 
-    messages.success(request, 'Success! You have succesfully joined this Neighbourhood ')
+    messages.success(request, 'Success! You have succesfully joined this Neighbourhood.Thanks alot!')
     return redirect('hoods')
